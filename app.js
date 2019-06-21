@@ -14,7 +14,7 @@ function app(people){
     break;
     case 'no':
         promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
-        let info = searchByTraits()
+       
     // TODO: search by traits
     break;
     default:
@@ -59,10 +59,10 @@ function mainMenu(person, people){
 function searchByName(people){
   var firstName = promptFor("What is the person's first name?", chars);
   var lastName = promptFor("What is the person's last name?", chars);
-  personInfo += "Gender:" + person.gender + "\n";
-  personInfo += "height:" + person.height + "\n";
-  personInfo += "weight:"+ person.weight + "\n";
-  personInfo += "DOB:"   + person.weight + "\n";
+  // let personInfo = "Gender:" + person.gender + "\n";
+  // personInfo += "height:" + person.height + "\n";
+  // personInfo += "weight:"+ person.weight + "\n";
+  // personInfo += "DOB:"   + person.weight + "\n";
   var foundPerson = people.filter(function(person){
     if(person.firstName === firstName && person.lastName === lastName){
       return true;
@@ -88,6 +88,10 @@ function displayPerson(person){
   // height, weight, age, name, occupation, eye color.
   var personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Gender:" + person.gender + "\n";
+  personInfo += "height:" + person.height + "\n";
+  personInfo += "weight:"+ person.weight + "\n";
+  personInfo += "DOB:"   + person.weight + "\n";
   // TODO: finish getting the rest of the information to display
   alert(personInfo);
 }
@@ -111,27 +115,6 @@ function chars(input){
 }
 
 function birthDate(params) {
-  
-}
-
-
-
-function searchByTraits(){
-  promptFor("what would you like to search by?")
-
-  var foundPerson = people.filter(function(person){
-    if(person.weigth === weight){
-      return true;
-    }
-    if ( person.heigth === heigth){
-    
-    }
-    else{
-      return false;
-    }
-  });
-  // TODO: find the person using the hiegth and weigth they entered
-  return foundPerson;
-}
+};
 
 
