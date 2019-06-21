@@ -11,17 +11,15 @@ function app(people){
     // TODO: search by name
     var foundPerson = searchByName(people);
     displayPerson(foundPerson[0]);
-  
-    case 'no':
+      case 'no':
         promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
-       
-    // TODO: search by traits
+        // TODO: search by traits
     break;
     default:
     app(people); // restart app
     break;
 }
-
+}
 
 // Menu function to call once you find who you are looking for
 function mainMenu(person, people){
@@ -72,7 +70,7 @@ function searchByName(people){
   // TODO: find the person using the name they entered
   return foundPerson;
 }
-
+}
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
