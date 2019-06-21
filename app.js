@@ -10,9 +10,10 @@ function app(people){
     case 'yes':
     // TODO: search by name
     var foundPerson = searchByName(people);
+    displayPerson(foundPerson[0]);
     break;
     case 'no':
-        promptFor("which of these would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
+        promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
         let info = searchByTraits()
     // TODO: search by traits
     break;
