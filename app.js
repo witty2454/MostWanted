@@ -59,7 +59,10 @@ function mainMenu(person, people){
 function searchByName(people){
   var firstName = promptFor("What is the person's first name?", chars);
   var lastName = promptFor("What is the person's last name?", chars);
-
+  personInfo += "Gender:" + person.gender + "\n";
+  personInfo += "height:" + person.height + "\n";
+  personInfo += "weight:"+ person.weight + "\n";
+  personInfo += "DOB:"   + person.weight + "\n";
   var foundPerson = people.filter(function(person){
     if(person.firstName === firstName && person.lastName === lastName){
       return true;
