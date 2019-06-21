@@ -13,8 +13,8 @@ function app(people){
     displayPerson(foundPerson[0]);
   
     case 'no':
-        promptFor("which of these would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
-        let info = searchByTraits()
+        promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
+       
     // TODO: search by traits
     break;
     default:
@@ -59,8 +59,7 @@ function mainMenu(person, people){
 function searchByName(people){
   var firstName = promptFor("What is the person's first name?", chars);
   var lastName = promptFor("What is the person's last name?", chars);
- 
-  
+
   var foundPerson = people.filter(function(person){
     if(person.firstName === firstName && person.lastName === lastName){
       return true;
@@ -111,8 +110,3 @@ function yesNo(input){
 function chars(input){
   return true; // default validation only
 }
-
-
-}
-}
-
