@@ -53,13 +53,14 @@ function mainMenu(person, people){
     return mainMenu(person, people); // ask again
   }
 }
+}
 
 function searchByName(people){
-  var firstName = promptFor("What is the person's first name?", chars);
-  var lastName = promptFor("What is the person's last name?", chars);
+  var firstName = promptFor("What is the person's first name?", chars).toLowerCase();
+  var lastName = promptFor("What is the person's last name?", chars).toLowerCase();
 
   var foundPerson = people.filter(function(person){
-    if(person.firstName === firstName && person.lastName === lastName){
+    if(person.firstName.toLowerCase() === firstName && person.lastName.toLowerCase() === lastName){
       return true;
     }
     
@@ -70,7 +71,7 @@ function searchByName(people){
   // TODO: find the person using the name they entered
   return foundPerson;
 }
-}
+
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
