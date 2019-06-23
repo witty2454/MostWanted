@@ -99,12 +99,7 @@ function promptFor(question, valid){  // "valid" is a callback!
   } while(!response || !valid(response));
   return response;
 }
-function wrongResponse(question,invalid){
-  do{
-    var wrongResponse = prompt(question);
-  } while(!wrongResponse || !invalid(wrongResponse));
-  return wrongResponse;
-}
+
 
 // helper function to pass into promptFor to validate yes/no answers
 function yesNo(input){
@@ -116,7 +111,18 @@ function chars(input){
   return true; // default validation only
  }
 
+// var parents = [];
+// function ancestor(obj) {
+//   // return obj.parent().then(function parent (obj) {
+//     if (!parent) {
+//       return parents;
+//     } else {
 
+//       parents.push(parent);
+//       return ancestor(parent);
+//         }
+  
+// }
 
 
 
