@@ -87,7 +87,7 @@ function displayPerson(person){
   personInfo += "Gender:" + person.gender + "\n";
   personInfo += "height:" + person.height + "\n";
   personInfo += "weight:"+ person.weight + "\n";
-  personInfo += "DOB:"   + person.weight + "\n";
+  personInfo += "DOB:"   + person.dob + "\n";
   // TODO: finish getting the rest of the information to display
   alert(personInfo);
 }
@@ -99,6 +99,12 @@ function promptFor(question, valid){  // "valid" is a callback!
   } while(!response || !valid(response));
   return response;
 }
+function wrongResponse(question,invalid){
+  do{
+    var wrongResponse = prompt(question);
+  } while(!wrongResponse || !invalid(wrongResponse));
+  return wrongResponse;
+}
 
 // helper function to pass into promptFor to validate yes/no answers
 function yesNo(input){
@@ -108,4 +114,11 @@ function yesNo(input){
 // helper function to pass in as default promptFor validation
 function chars(input){
   return true; // default validation only
-}
+ }
+
+
+
+
+
+
+    
