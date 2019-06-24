@@ -11,11 +11,13 @@ function app(people){
     // TODO: search by name
     var foundPerson = searchByName(people);
     displayPerson(foundPerson[0]);
+    let foundDescendants = findDescendants(foundPerson[0], people);
+    displayPeople(foundDescendants);
       case 'no':
         promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
         searchByTraits(people);
     break;
-      
+
     default:
     app(people); // restart app
     break;
@@ -30,14 +32,15 @@ function mainMenu(person, people){
       if(!person){
         alert("Could not find that individual.");
         return app(people);
-       } // restart
+      } // restart
   
 
   var displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
 
   switch(displayOption){
     case "info":
-
+    
+    // TODO: get person's info
     break;
     case "family":
     // TODO: get person's family
@@ -76,10 +79,13 @@ function searchByName(people){
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
+<<<<<<< HEAD
     return (person.firstName + " " + person.lastName);
+=======
+    return person.id;
+>>>>>>> 8922bb5a3b273e203c48578368bf402760df3c21
   }).join("\n"));
 }
-
 
 function displayPerson(person){
   // print all of the information about a person:
@@ -112,8 +118,16 @@ function yesNo(input){
 function chars(input){
   return true; // default validation only
  }
+ 
 
-//working on traits
+
+function findDescendants(person,people) {
+  // find first gen of descendants
+
+  
+}
+  // TODO: find the person using the name they entered
+  //working on traits
 
 function searchByTraits(people){
 if (searchByDob(people)) {
@@ -130,6 +144,7 @@ if (searchByHeight(people)) {
  }
 }
 
+<<<<<<< HEAD
 function searchByDob(people){
   var dob = promptFor("What is the person's DOB?", chars).toLowerCase();
   
@@ -146,6 +161,22 @@ function searchByDob(people){
   // TODO: find the person using the name they entered
   return foundPerson;
 }
+=======
+function searchByDob(dob){
+ 
+  var foundPerson = dob.filter(function(person){
+     if(data.person.dob.toLowerCase() === firstName){
+       return true;
+     }
+     
+     else{
+       return false;
+     }
+   });
+   // TODO: find the person using the name they entered
+   return foundPerson;
+ }
+>>>>>>> 8922bb5a3b273e203c48578368bf402760df3c21
 
 // alerts a list of people
 function displayPeople(people){
@@ -178,4 +209,4 @@ else{
 
 
 
-  
+  // use recursion to find further generation
