@@ -116,5 +116,3 @@ function chars(input){
 
 function birthDate(params) {
 };
-
-
