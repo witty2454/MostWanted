@@ -15,8 +15,9 @@ function app(people){
     displayPeople(foundDescendants);
       case 'no':
         promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
-        // TODO: search by traits
+        searchByTraits();
     break;
+
     default:
     app(people); // restart app
     break;
@@ -30,7 +31,8 @@ function mainMenu(person, people){
   
       if(!person){
         alert("Could not find that individual.");
-        return app(people); // restart
+        return app(people);
+      } // restart
   
 
   var displayOption = prompt("Found " + person.firstName + " " + person.lastName + " . Do you want to know their 'info', 'family', or 'descendants'? Type the option you want or 'restart' or 'quit'");
@@ -55,7 +57,7 @@ function mainMenu(person, people){
     return mainMenu(person, people); // ask again
   }
 }
-}
+
 
 function searchByName(people){
   var firstName = promptFor("What is the person's first name?", chars).toLowerCase();
@@ -121,9 +123,38 @@ function findDescendants(person,people) {
   
 }
   // TODO: find the person using the name they entered
+  //working on traits
+
+function searchByTraits(){
+if (searchByDob()) {
+    prompt("What is the person's DOB?");
+}
+if (searchByHeight()) {
+    prompt("What is persons Height?");
+ }
+ if (searchByHeight()) {
+     prompt("What is the persons weight?");
+ } else {
+     alert("Could not find that individual.");
+ 
+ }
+}
+
+function searchByDob(dob){
+ 
+  var foundPerson = dob.filter(function(person){
+     if(data.person.dob.toLowerCase() === firstName){
+       return true;
+     }
+     
+     else{
+       return false;
+     }
+   });
+   // TODO: find the person using the name they entered
+   return foundPerson;
+ }
 
 
 
-  // use recursion to find further generations
-
-
+  // use recursion to find further generation
