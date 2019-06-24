@@ -96,7 +96,7 @@ const data = [
 		"firstName": "Missuz",
 		"lastName": "Potatoo",
 		"gender": "female",
-		"dob": "10/28/1948",
+		"dob": "13",
 		"height": 59,
 		"weight": 137,
 		"eyeColor": "blue",

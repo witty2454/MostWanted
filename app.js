@@ -79,11 +79,7 @@ function searchByName(people){
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
-<<<<<<< HEAD
     return (person.firstName + " " + person.lastName);
-=======
-    return person.id;
->>>>>>> 8922bb5a3b273e203c48578368bf402760df3c21
   }).join("\n"));
 }
 
@@ -144,7 +140,7 @@ if (searchByHeight(people)) {
  }
 }
 
-<<<<<<< HEAD
+
 function searchByDob(people){
   var dob = promptFor("What is the person's DOB?", chars).toLowerCase();
   
@@ -161,22 +157,7 @@ function searchByDob(people){
   // TODO: find the person using the name they entered
   return foundPerson;
 }
-=======
-function searchByDob(dob){
- 
-  var foundPerson = dob.filter(function(person){
-     if(data.person.dob.toLowerCase() === firstName){
-       return true;
-     }
-     
-     else{
-       return false;
-     }
-   });
-   // TODO: find the person using the name they entered
-   return foundPerson;
- }
->>>>>>> 8922bb5a3b273e203c48578368bf402760df3c21
+
 
 // alerts a list of people
 function displayPeople(people){
@@ -184,28 +165,50 @@ function displayPeople(people){
     return (person.dob );
   }).join("\n"));
 }
- 
-  function searchByHeight(people){
-    let height = prompt("What is the person's Height?")
-    if(people.height === height){
-    return true;
-  }
+ //Search by height function
+function searchByHeight(people){
+  var height = promptFor("What is the person's Height?", chars).toLowerCase();
   
-  else{
-    return false;
-  }
-};
+  
+  var foundPerson = people.filter(function(person){
+    if(person.height === height) {
+      return true;
+    }
+    
+    else{
+      return false;
+    }
+  });
+  // TODO: find the person using the name they entered
+  return foundPerson;
+}
 
+
+// alerts a list of people
 function searchByWeight(people){
- let weight= prompt("What is the person's Weight?")
-  if(people.weight === weight){
-  return true;
+  var weight = promptFor("What is the person's Weight?", chars).toLowerCase();
+  
+  
+  var foundPerson = people.filter(function(person){
+    if(person.weight === weight) {
+      return true;
+    }
+    
+    else{
+      return false;
+    }
+  });
+  // TODO: find the person using the name they entered
+  return foundPerson;
 }
 
-else{
-  return false;
+
+// alerts a list of people
+function displayPeople(people){
+  alert(people.map(function(person){
+    return (person.dob );
+  }).join("\n"));
 }
-};
 
 
 
