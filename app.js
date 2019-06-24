@@ -11,6 +11,8 @@ function app(people){
     // TODO: search by name
     var foundPerson = searchByName(people);
     displayPerson(foundPerson[0]);
+    let foundDescendants = findDescendants(foundPerson[0], people);
+    displayPeople(foundDescendants);
       case 'no':
         promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
         // TODO: search by traits
@@ -75,7 +77,7 @@ function searchByName(people){
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
-    return person.firstName + " " + person.lastName;
+    return person.id;
   }).join("\n"));
 }
 
@@ -110,21 +112,18 @@ function yesNo(input){
 function chars(input){
   return true; // default validation only
  }
+ 
 
-// var parents = [];
-// function ancestor(obj) {
-//   // return obj.parent().then(function parent (obj) {
-//     if (!parent) {
-//       return parents;
-//     } else {
 
-//       parents.push(parent);
-//       return ancestor(parent);
-//         }
+function findDescendants(person,people) {
+  // find first gen of descendants
+
   
-// }
+}
+  // TODO: find the person using the name they entered
 
 
 
+  // use recursion to find further generations
 
-    
+
