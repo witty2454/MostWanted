@@ -17,7 +17,7 @@ function app(people){
     // prompt("name of person?")
       case 'no':
         promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
-        searchByTraits();
+        searchByTraits(people);
     break;
 
     default:
@@ -64,7 +64,7 @@ function mainMenu(person, people){
 function searchByName(people){
   var firstName = promptFor("What is the person's first name?", chars).toLowerCase();
   var lastName = promptFor("What is the person's last name?", chars).toLowerCase();
-
+  
   var foundPerson = people.filter(function(person){
     if(person.firstName.toLowerCase() === firstName && person.lastName.toLowerCase() === lastName){
       return true;
@@ -155,14 +155,14 @@ function findDescendants(person,people) {
   // TODO: find the person using the name they entered
   //working on traits
 
-function searchByTraits(){
-if (searchByDob()) {
+function searchByTraits(people){
+if (searchByDob(people)) {
     prompt("What is the person's DOB?");
 }
-if (searchByHeight()) {
+if (searchByHeight(people)) {
     prompt("What is persons Height?");
  }
- if (searchByHeight()) {
+ if (searchByWeight(people)) {
      prompt("What is the persons weight?");
  } else {
      alert("Could not find that individual.");
