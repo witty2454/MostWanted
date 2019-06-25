@@ -13,6 +13,8 @@ function app(people){
     displayPerson(foundPerson[0]);
     let foundDescendants = findDescendants(foundPerson[0], people);
     displayPeople(foundDescendants);
+    
+    // prompt("name of person?")
       case 'no':
         promptFor(" Would you like to search by weigth, heigth, or DOB?", yesNo).toLowerCase();
         searchByTraits();
@@ -77,9 +79,9 @@ function searchByName(people){
 }
 
 // alerts a list of people
-function displayPeople(people){
+ function displayPeople(people){
   alert(people.map(function(person){
-    return person.id;
+    return people.map;
   }).join("\n"));
 }
 
@@ -92,6 +94,7 @@ function displayPerson(person){
   personInfo += "height:" + person.height + "\n";
   personInfo += "weight:"+ person.weight + "\n";
   personInfo += "DOB:"   + person.dob + "\n";
+  personInfo += "ID:"  + person.id + "\n";
   // TODO: finish getting the rest of the information to display
   alert(personInfo);
 }
@@ -118,10 +121,37 @@ function chars(input){
 
 
 function findDescendants(person,people) {
+  let children = []; 
+  
+
+  for (let i = 0; i < people.length; i++) {
+    const element = people[i];
+    if (element.parents[0] === person.id || element.parents[1] === person.id )    
+    
+    return true;
+    children.push('element') 
+
+    }  // if they are a child of 'person'
+      // add 'element' to the 'children' array
+    return  children[0];
+    
+  }
+    // return children[0];
+  
+    
+  
+    
+   // we have person
+  // loop through people, FOR LOOP!
+    // look to see if each person one at a time
+    // has a "parent" (where the parent's id matches the person's id)
+
+    
+
   // find first gen of descendants
 
   
-}
+
   // TODO: find the person using the name they entered
   //working on traits
 
@@ -154,7 +184,3 @@ function searchByDob(dob){
    // TODO: find the person using the name they entered
    return foundPerson;
  }
-
-
-
-  // use recursion to find further generation
