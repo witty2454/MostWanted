@@ -126,14 +126,14 @@ function findDescendants(person,people) {
 
   for (let i = 0; i < people.length; i++) {
     const element = people[i];
-    if (element.parents[0] === person.id || element.parents[1] === person.id )    
+    if (element.parents[0] === person.id || element.parents[2] === person.id )    
     
     return true;
     children.push('element') 
 
     }  // if they are a child of 'person'
       // add 'element' to the 'children' array
-    return  children[0];
+    return  children;
     
   }
     // return children[0];
